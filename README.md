@@ -25,15 +25,15 @@ This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **
 
 ## **Entities**
 ### **Match**
-| Field         | Type     | Description                          |
-|---------------|----------|--------------------------------------|
-| id            | Integer  | Unique identifier for the match.     |
-| description   | String   | Description of the match.            |
-| match_date    | Date     | Date of the match.                   |
-| match_time    | Time     | Time of the match.                   |
-| teamA         | String   | Name of team A.                      |
-| teamB         | String   | Name of team B.                      |
-| sport         | Enum     | Sport type (`FOOTBALL` or `BASKETBALL`). |
+| Field       | Type     | Description                          |
+|-------------|----------|--------------------------------------|
+| id          | Integer  | Unique identifier for the match.     |
+| description | String   | Description of the match.            |
+| matchDate   | Date     | Date of the match.                   |
+| matchTime   | Time     | Time of the match.                   |
+| teamA       | String   | Name of team A.                      |
+| teamB       | String   | Name of team B.                      |
+| sport       | Enum     | Sport type (`FOOTBALL` or `BASKETBALL`). |
 
 ### **MatchOdds**
 | Field         | Type     | Description                          |
@@ -47,28 +47,31 @@ This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **
 
 ## **Endpoints**
 ### Match Endpoints
-| HTTP Method | Endpoint         | Description                           |
-|-------------|------------------|---------------------------------------|
-| GET         | `/matches`       | Retrieve all matches.                 |
-| GET         | `/matches/{id}`  | Retrieve a match by ID.               |
-| POST        | `/matches`       | Create a new match.                   |
-| PUT         | `/matches/{id}`  | Update an existing match.             |
-| DELETE      | `/matches/{id}`  | Delete a match by ID.                 |
+| HTTP Method | Endpoint         | Description               |
+|-------------|------------------|---------------------------|
+| GET         | `/matches`       | Retrieve all matches.     |
+| GET         | `/matches/{id}`  | Retrieve a match by Id.   |
+| POST        | `/matches`       | Create a new match.       |
+| PUT         | `/matches/{id}`  | Update an existing match. |
+| DELETE      | `/matches/{id}`  | Delete a match by Id.     |
 
 ### Match Odds Endpoints
-| HTTP Method | Endpoint                      | Description                           |
-|-------------|-------------------------------|---------------------------------------|
-| GET         | `/match-odds/{matchId}/odds`  | Retrieve odds for a specific match.   |
-| POST        | `/match-odds/{matchId}/odds`  | Add odds to a specific match.         |
-| DELETE      | `/match-odds/{id}`            | Delete odds by ID.                    |
+| HTTP Method | Endpoint                     | Description                         |
+|-------------|------------------------------|-------------------------------------|
+| GET         | `/match-odds/`               | Retrieve all odds.                  |
+| GET         | `/match-odds/{id}/`          | Retrieve an odds by Id.             |
+| GET         | `/match-odds/{matchId}/odds` | Retrieve odds for a specific match. |
+| POST        | `/match-odds/{matchId}/odds` | Add odds to a specific match.       |
+| PUT         | `/match-odds/{id}/ `         | Update an existing match odd.       |
+| DELETE      | `/match-odds/{id}`           | Delete odds by Id.                  |
 
 ---
 
 ## **Getting Started**
 ### **Prerequisites**
-- **JDK 17** or later.
+- **JDK 17**.
 - **PostgreSQL** installed or accessible.
-- **Docker** (optional, for containerized deployment).
+- **Docker** installed.
 - **Maven** for building the application.
 
 ---
@@ -78,13 +81,16 @@ This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **
    ```bash
    git clone <repository-url>
    cd <repository-folder>
-2. Setup the database:
+2. Set up the database:
    ```Create PostgreSQL Database named matches. Then update connection details in application.properties:
       spring.datasource.url=jdbc:postgresql://localhost:5432/matches
       spring.datasource.username=admin
       spring.datasource.password=password
       spring.jpa.hibernate.ddl-auto=update
 3. Build and run the application:
+   ```
+      mvn clean package
+      java -jar target/matchbet-0.0.1-SNAPSHOT.jar
 4. Access the API (Swagger UI):
    ```
       http://localhost:8080/swagger-ui.html
