@@ -8,7 +8,7 @@ This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **
 ## **Features**
 - Create, read, update, and delete **matches** and **match odds**.
 - Database integration with **PostgreSQL**.
-- Enum mapping for sports (`FOOTBALL`, `BASKETBALL`) stored as integers.
+- Enum mapping for sports (`FOOTBALL`, `BASKETBALL`).
 - Dockerized deployment for autonomous operation.
 - Swagger UI for API documentation and testing.
 
@@ -78,3 +78,13 @@ This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **
    ```bash
    git clone <repository-url>
    cd <repository-folder>
+2. Setup the database:
+   ```Create PostgreSQL Database named matches. Then update connection details in application.properties:
+      spring.datasource.url=jdbc:postgresql://localhost:5432/matches
+      spring.datasource.username=admin
+      spring.datasource.password=password
+      spring.jpa.hibernate.ddl-auto=update
+3. Build and run the application:
+4. Access the API (Swagger UI):
+   ```
+      http://localhost:8080/swagger-ui.html
