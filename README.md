@@ -1,7 +1,7 @@
 # Match and Odds Management API
 
 ## **Overview**
-This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **Docker**. It provides endpoints to manage sports matches and their associated betting odds. The API includes full CRUD functionality and can run autonomously in a Docker container.
+This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **Docker**. It provides endpoints to manage sports matches and their associated betting odds. The API includes full CRUD functionality and Database Integration.
 
 ---
 
