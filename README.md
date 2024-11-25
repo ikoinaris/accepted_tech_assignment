@@ -81,8 +81,8 @@ This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **
    ```bash
    git clone <repository-url>
    cd <repository-folder>
-2. Set up the database:
-   ```Create PostgreSQL Database named matches. Then update connection details in application.properties:
+2. Create PostgreSQL Database named matches. Then update connection details in application.properties:
+   ```
       spring.datasource.url=jdbc:postgresql://localhost:5432/matches
       spring.datasource.username=admin
       spring.datasource.password=password
