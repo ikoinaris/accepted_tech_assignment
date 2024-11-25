@@ -16,8 +16,8 @@ This project is a RESTful API built with **Spring Boot**, **PostgreSQL**, and **
 
 ## **Technology Stack**
 - **Java** (Spring Boot)
-- **PostgreSQL** (Database)
-- **Docker** (Containerization)
+- **Docker** (PostgreSQL Database Containerization)
+- **Flyway** (Initialization of Database Schema)
 - **Swagger** (API Documentation)
 - **Maven** (Build Tool)
 
